@@ -52,7 +52,10 @@ class App extends React.Component {
         //1. Take a copy of state
         const fishes = { ...this.state.fishes };
         //2. Update that state
-        fishes[key] = null;
+        //TODO: (Aleksey Samoylov): add setting status to fish instead of setting fishes[key] = null;
+        let fish = fishes[key];
+        fish.status = "unavailable";
+        fishes[key] = fish;
         //3. Set that to state
         this.setState({ fishes });
     }
