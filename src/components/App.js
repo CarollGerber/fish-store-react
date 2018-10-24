@@ -20,7 +20,7 @@ class App extends React.Component {
 
     componentDidMount() {
         const { params } = this.props.match;
-        this.ref = base.syncState(`${params.storeID}/fishes`, {
+        this.ref = base.syncState(`${params.storeId}/fishes`, {
             context: this,
             state: 'fishes'
         });
@@ -106,6 +106,7 @@ class App extends React.Component {
                     deleteFish = {this.deleteFish}
                     loadSampleFishes={this.loadSampleFishes} 
                     fishes={this.state.fishes}
+                    storeId={this.props.match.params.storeId}
                 />
 
             </div>
